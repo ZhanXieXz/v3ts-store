@@ -10,15 +10,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router';
+// import { apiGet } from '@/api/index';
 export default defineComponent({
     name: '',
     setup () {
       const router = useRouter()
       const search = () => {
-        console.log(apiGet)
-        apiGet('http://localhost:8080/product.json', {}).then((res) => {
-          console.log(res)
-        })
+        // console.log(apiGet)
+        // apiGet('http://localhost:8080/product.json', {}).then((res:】) => {
+        //   console.log(res)
+        // })
       }
       return {
         router,
