@@ -31,7 +31,7 @@ export default defineComponent({
 </script>
 
 <style lang='less'>
-.user-action{
+.user-action {
   display: flex;
   justify-content: space-between;
   align-items: center;
