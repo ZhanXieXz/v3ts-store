@@ -10,14 +10,18 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/product-list/:id',
     name: 'productList',
-    component: () => import('../views/ProductList/list.vue')
+    component: () => import('../views/Product/list.vue')
+  },
+  {
+    path: '/product-detail/:id',
+    name: 'productDetail',
+    component: () => import('../views/Product/detail.vue')
   },
   {
     path: '/:pathMatch(.*)',
     // redirect: '/404'
     name: '404',
     component: () => import('../components/404.vue')
-
   },
   // {
   //   path: '*',

@@ -13,7 +13,7 @@
             </div>
           </li>
             <li class="right">
-              <img :src="currentImgUrl" alt="">
+              <img v-lazyload="currentImgUrl" alt="">
             </li>
         </ul>
     </div>
@@ -26,7 +26,7 @@ interface InavList<T> {
   url?: string;
   imgUrl: string
 }
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
 export default defineComponent({
     name: 'middleNav',
@@ -59,17 +59,18 @@ export default defineComponent({
           currentImgUrl.value = url
         }
       }
-      const linkToList = (id:number) =>{
+      const linkToList = (id:string) =>{
         console.log(id);
         id && router.push(`/product-list/${id}`)
-        
       }
-      onMounted(() => {
+      
+     const init = () => {
         if (navList.value.length) {
           mouseMoveHandle(navList.value[0].imgUrl)
         }
         
-      })
+      }
+      init()
       return {
         navList,
         mouseMoveHandle,

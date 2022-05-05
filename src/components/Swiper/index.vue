@@ -8,7 +8,7 @@
         :class="{ fade: index === i }"
         @click="linkToList(item.bannerId)"
       >
-          <img :src="item.imgUrl" alt="图片" />
+          <img v-lazyload="item.imgUrl" alt="图片" />
       </li>
     </ul>
     <a @click="clickFn(-1)" href="javascript:;" class="carousel-btn prev"><i class="iconfont icon-left"></i></a>
@@ -121,11 +121,10 @@ export default defineComponent({
   .carousel {
     &-body {
       width: 100%;
-      height: 100%;
+      padding-top: 128%;
     }
     &-item {
       width: 100%;
-      height: 100%;
       position: absolute;
       left: 0;
       top: 0;
